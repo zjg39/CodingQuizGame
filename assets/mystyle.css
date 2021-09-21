@@ -1,0 +1,291 @@
+/* Stylesheet for the Javascript Quiz */
+
+
+
+/* Concerning the front page: introduction and starting the quiz. */
+
+#main-header {
+    background-color: lightcyan;
+    align-items: center;
+    margin: auto;
+    margin-top: 200px;
+    padding: 20px 30px;
+    box-shadow: 20px 20px rgb(135, 241, 64);
+    border: 2px solid black;
+}
+
+.main-container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 60px;
+    color: rebeccapurple;
+}
+
+h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    color: rebeccapurple;
+}
+
+header p {
+    color: rgb(58, 55, 55);
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+#startbutton {
+    width: 200px;
+    padding: 10px 0px;
+    color: rebeccapurple;
+    font-size: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: gainsboro;
+    transition-duration: .25s;
+}
+
+#startbutton:hover {
+    color: rgb(240, 8, 151);
+    background-color: rebeccapurple;
+}
+
+
+
+/* The Question Pages: Five Questions total, all do to with basic JavaScript. */
+
+
+/* Question No. 1 */
+
+.question-container {
+    margin: auto;
+    margin-top: 200px;
+    padding: 20px 30px;
+    border: 2px solid black;
+    width: 700px;
+    text-align: center;
+}
+
+#question1 {
+    box-shadow: 20px 20px rgb(241, 232, 96);
+    background-color: rgb(247, 175, 235);
+}
+
+#question1question {
+    color: rgb(197, 104, 29);
+    text-shadow: 3px 3px rgb(235, 178, 104); ;
+}
+
+.questionbutton {
+    width: 200px;
+    padding: 10px 0px;
+    font-size: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#question1button {
+    color: rgb(197, 104, 29);
+    background-color: rgb(235, 178, 104);
+}
+
+#question1button:hover {
+    background-color: rgb(241, 232, 96);
+    color: orangered;
+    transition-duration: .25s;
+}
+
+
+
+/* Question No. 2 */
+
+
+#question2 {
+    box-shadow: 20px 20px rgb(248, 114, 248);
+    background-color: rgb(143, 235, 22);
+}
+
+#question2question {
+    color: rgb(209, 27, 179);
+    text-shadow: 2px 2px rgb(195, 118, 240); ;
+}
+
+#question2button {
+    color: rgb(224, 12, 101);
+    background-color: rgb(195, 118, 240);
+}
+
+#question2button:hover {
+    background-color: rgb(165, 227, 247);
+    color: rgb(247, 6, 6);
+    transition-duration: .25s;
+}
+
+#question2-3button {
+    font-size: 25px;
+    color: rgb(224, 12, 101);
+    background-color: rgb(195, 118, 240);
+}
+
+#question2-4button {
+    width: 300px;
+    padding: 15px 0px;
+    font-size: 20px;
+    color: rgb(224, 12, 101);
+    background-color: rgb(195, 118, 240);
+}
+
+#question2-3button:hover {
+    background-color: rgb(165, 227, 247);
+    color: rgb(247, 6, 6);
+    transition-duration: .25s;
+}
+
+#question2-4button:hover {
+    background-color: rgb(165, 227, 247);
+    color: rgb(247, 6, 6);
+    transition-duration: .25s;
+}
+
+
+
+
+/* Question No. 3 */
+
+
+#question3 {
+    box-shadow: 20px 20px rgb(48, 48, 48);
+    background-color: gray;
+}
+
+#question3question {
+    color: black;
+    text-shadow: 2px 2px white;
+}
+
+#question3button {
+    color: black;
+    background-color: white;
+}
+
+#question3button:hover {
+    background-color: black;
+    color: white;
+    transition-duration: .25s;
+}
+
+
+
+
+/* Question No. 4 */
+
+
+#question4 {
+    box-shadow: 20px 20px rgb(248, 3, 175);
+    background-color: rgb(165, 227, 247);
+}
+
+#question4question {
+    color: rgb(248, 3, 175);
+    text-shadow: 2px 2px rgb(161, 90, 243);
+}
+
+#question4button {
+    color: rgb(248, 3, 175);
+    background-color: rgb(161, 90, 243);
+}
+
+#question4button:hover {
+    background-color: rgb(248, 3, 175);
+    color: rgb(46, 28, 80);
+    transition-duration: .25s;
+}
+
+#question4-4button {
+    color: rgb(248, 3, 175);
+    background-color: rgb(161, 90, 243);
+    width: 240px;
+}
+
+#question4-4button:hover {
+    background-color: rgb(248, 3, 175);
+    color: rgb(46, 28, 80);
+    transition-duration: .25s;
+}
+
+
+
+/* Question No. 5 */
+
+
+#question5 {
+    box-shadow: 20px 20px rgb(22, 223, 4);
+    background-color: rgb(250, 246, 0);
+}
+
+#question5question {
+    color: rgb(22, 223, 4);
+    text-shadow: 2px 2px rgb(248, 6, 196);
+}
+
+#question5button {
+    color: rgb(46, 230, 29);
+    background-color: rgb(248, 6, 196);
+}
+
+#question5button:hover {
+    background-color: rgb(165, 227, 247);
+    color: rgb(248, 6, 196);
+    transition-duration: .25s;
+}
+
+
+
+/* Final Score and Initial Submit */
+
+
+#finalscorebox {
+    box-shadow: 20px 20px rgb(187, 59, 238);
+    background-color: rgb(17, 0, 250);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#finalscoretitle {
+    color: rgb(79, 247, 1);
+    text-shadow: 2px 2px white;
+}
+
+#finalscoreinstructions {
+    color: rgb(79, 247, 1);
+    text-shadow: 2px 2px white;
+}
+
+#initialsbox {
+    text-align: center;
+    height: 25px;
+    width: 150px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#initialsbutton {
+    background-color: rgb(79, 247, 1);
+    color: (17, 0, 250);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    height: 40px;
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+#initialsbutton:hover {
+    background-color: rgb(187, 59, 238);
+    color: white;
+    transition-duration: .25s;
+}

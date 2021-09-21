@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Javascript Coding Quiz - Homework 4</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./assets/mystyle.css">
+    </head>
+
+    <!-- The opening page for the quiz.  A fun, colorful theme that readies the user for an enjoyable experience. -->
+
+    <body>
+        <header class="main-container" id="main-header">
+            <div>
+                <h1>Coding Quiz Challenge!</h1>
+            </div>
+            <div>
+                <h2>Test your knowledge of JavaScript!</h2> 
+            </div>
+            <div>
+                <p>
+                    Click the button below to begin the quiz!  Your knowledge of JavaScript will be tested by answering a series of multiple choice questions under a time limit!
+                </p>
+                <p>
+                    Be warned: a wrong answer will cost you precious time, so answer with care!
+                </p>
+                <p>
+                    Record your score at the end and compare your performance with others!
+                </p>
+            </div>
+            <form>
+                <input type="button" id="startbutton" value="START">
+            </form>
+        </header>
+
+
+                    <!-- The Questions Pages -->
+        
+
+                    <!-- Question No. 1 -->
+
+        <main>
+            <div>
+                <h2 id="countdown"></h2>
+            </div>
+            <div class="question-container" id="question1">
+                <h1 id="question1question">Question 1</h1>
+                <br>
+                <h2 id="question1question">Which keyword is used to define a variable?</h2>
+                    <form>
+                        <input type="button" class="questionbutton" id="question1button" value="str">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question1button" id="question1correct" value="var">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question1button" value="new">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question1button" value="true">
+                    </form>
+            </div>
+
+
+                    <!-- Question No. 2 -->
+
+            <div class="question-container" id="question2">
+                <h1 id="question2question">Question 2</h1>
+                <br>
+                <h2 id="question2question">Which of the following examples is an array?</h2>
+                    <form>
+                        <input type="button" class="questionbutton" id="question2button" value="40px">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question2button" value="var = 3.14">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question2-3button" id="question2correct" value="[1, 'Laser', 35]">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question2-4button" value="for (i = 0; i < array.length; i++)">
+                    </form>
+            </div>
+        
+
+
+
+         <!-- Question No. 3 -->
+
+            <div class="question-container" id="question3">
+                <h1 id="question3question">Question 3</h1>
+                <br>
+                <h2 id="question3question">Which of the following would "call" a function?</h2>
+                    <form>
+                        <input type="button" class="questionbutton" id="question3button" value="var = call">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question3button" value="function: call;">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question3button" value="print(function)">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question3button" id="question3correct" value="function();">
+                    </form>
+            </div>
+
+
+
+
+            <!-- Question No. 4 -->
+
+            <div class="question-container" id="question4">
+                <h1 id="question4question">Question 4</h1>
+                <br>
+                <h2 id="question4question">"Boolean(10 > 12)" will return which statement?</h2>
+                    <form>
+                        <input type="button" class="questionbutton" id="question4button" value="True">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question4button" id="question4correct" value="False">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question4button" value="Yes">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question4-4button" value="function(false);">
+                    </form>
+            </div>
+
+
+
+            <!-- Question No. 5 -->
+
+            <div class="question-container" id="question5">
+                <h1 id="question5question">Question 5</h1>
+                <br>
+                <h2 id="question5question">Which of the following is <i>not</i> a conditional statement?</h2>
+                    <form>
+                        <input type="button" class="questionbutton" id="question5button" id="question5correct" value="Alert">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question5button" value="Else if">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question5button" value="If">
+                    </form>
+                    <br>
+                    <form>
+                        <input type="button" class="questionbutton" id="question5button" value="Else">
+                    </form>
+            </div>
+
+
+            <!-- Your Score and Initials Page -->
+
+            <div  class="question-container" id="finalscorebox">
+                <h1 id="finalscoretitle">DONE!</h1>
+                <br>
+                <h2 id="finalscoreinstructions">Record your initials below!</h2>
+                <br>
+                <input type="text" placeholder="Enter your initials" id="initialsbox"><input type="button" id="initialsbutton" value="SUBMIT">
+            </div>
+
+
+            <!-- Scoreboard Page -->
+
+            <div>
+                
+            </div>
+        </main>
+        <script src="./assets/script.js"></script>
+    </body>
+</html>
