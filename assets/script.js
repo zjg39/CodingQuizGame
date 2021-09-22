@@ -14,6 +14,7 @@ var question4 = document.querySelector('#question4');
 var question5 = document.querySelector('#question5');
 var finalScore = document.querySelector('#finalscorebox');
 var highScore = document.querySelector('#highscorebox');
+var submitInitials = document.querySelector('#initials');
 
 var startButton = document.querySelector('#startbutton');
 
@@ -32,6 +33,9 @@ var correct5 = document.querySelector('#question5correct');
 // Win condition & Time remaining
 
 var youWin = false;
+
+var score = ''
+
 var timeRemaining = 0;
 
 // start the game with only the opening page displayed
@@ -53,19 +57,25 @@ function readyToPlay() {
 
 // The countdown clockwork
 
+var timeRemaining = 75;
+
 function gameClock() {
-    var timeRemaining = 75;
     var timeInterval = setInterval(function() {
         if (timeRemaining > 1) {
             countdown.textContent = timeRemaining + ' seconds left';
             timeRemaining--;
         } else if (timeRemaining == 1) {
             countdown.textContent = timeRemaining + ' second left';
-            timeRemaining--;
+            timeRemaining--; 
         } else {
             timeRemaining.textContent = '';
             clearInterval(timeInterval);
             youLose()
+        }
+        if (youWin == true) {
+            clearInterval(timeInterval);
+            score = timeRemaining;
+            toFinalScoreBox();
         }
     }, 1000);
 }
@@ -84,9 +94,45 @@ function checkQuestion1(event) {
     if (element1 == rightAnswers[0]) {
     } else {
         timeRemaining = timeRemaining - 10;
-    }
+    } toQuestion2();
 }
 
+function checkQuestion2(event) {
+    var element1 = event.target.value;
+    console.log(element1);
+    if (element1 == rightAnswers[1]) {
+    } else {
+        timeRemaining = timeRemaining - 10;
+    } toQuestion3();
+}
+
+function checkQuestion3(event) {
+    var element1 = event.target.value;
+    console.log(element1);
+    if (element1 == rightAnswers[2]) {
+    } else {
+        timeRemaining = timeRemaining - 10;
+    } toQuestion4();
+}
+
+function checkQuestion4(event) {
+    var element1 = event.target.value;
+    console.log(element1);
+    if (element1 == rightAnswers[3]) {
+    } else {
+        timeRemaining = timeRemaining - 10;
+    } toQuestion5();
+}
+
+function checkQuestion5(event) {
+    var element1 = event.target.value;
+    console.log(element1);
+    if (element1 == rightAnswers[4]) {
+    } else {
+        timeRemaining = timeRemaining - 10;
+    }youWin = true;
+     toFinalScoreBox();
+}
 
 
 
@@ -103,40 +149,45 @@ function quizGame() {
         var questionButton2 = document.querySelector('.questionButton2');
         question1.style.display = 'none';
         question2.style.display = 'block';
-        questionButton2.addEventListener('click', toQuestion3);
+        questionButton2.addEventListener('click', checkQuestion2);
     }
 
     function toQuestion3 () {
         var questionButton3 = document.querySelector('.questionButton3');
         question2.style.display = 'none';
         question3.style.display = 'block';
-        questionButton3.addEventListener('click', toQuestion4)
+        questionButton3.addEventListener('click', checkQuestion3)
     }
 
     function toQuestion4 () {
         var questionButton4 = document.querySelector('.questionButton4');
         question3.style.display = 'none';
         question4.style.display = 'block';
-        questionButton4.addEventListener('click', toQuestion5)
+        questionButton4.addEventListener('click', checkQuestion4)
     }
 
     function toQuestion5 () {
         var questionButton5 = document.querySelector('.questionButton5');
         question4.style.display = 'none';
         question5.style.display = 'block';
-        questionButton5.addEventListener('click', toFinalScoreBox)
+        questionButton5.addEventListener('click', checkQuestion5)
     }
 
     function toFinalScoreBox () {
         question5.style.display = 'none';
         finalScore.style.display = 'block';
-        finalScore.addEventListener('click', toHighScore)
+        submitInitials.addEventListener('click', toHighScore)
     }
 
     function toHighScore () {
+        console.log("clicked!")
         finalScore.style.display = 'none';
         highScore.style.display = 'block';
-        highScore.addEventListener('click', readyToPlay)
+        highScore.addEventListener('click', reloadPage)
+    }
+
+    function reloadPage () {
+        location.reload();
     }
 
 readyToPlay();
