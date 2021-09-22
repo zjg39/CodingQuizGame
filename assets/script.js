@@ -3,7 +3,6 @@
 
 // Variables to reference the more important stuff
 
-
 var startPage = document.querySelector('#main-header');
 var question1 = document.querySelector('#question1');
 var question2 = document.querySelector('#question2');
@@ -33,6 +32,7 @@ var youLose = false;
 var score = '';
 var highScoreList = [];
 var timeRemaining = 0;
+
 
 
 // start the game with only the opening page displayed
@@ -93,7 +93,6 @@ function checkQuestion1(event) {
         timeRemaining = timeRemaining - 10;
     } toQuestion2();
 }
-
 function checkQuestion2(event) {
     var element1 = event.target.value;
     console.log(element1);
@@ -102,7 +101,6 @@ function checkQuestion2(event) {
         timeRemaining = timeRemaining - 10;
     } toQuestion3();
 }
-
 function checkQuestion3(event) {
     var element1 = event.target.value;
     console.log(element1);
@@ -111,7 +109,6 @@ function checkQuestion3(event) {
         timeRemaining = timeRemaining - 10;
     } toQuestion4();
 }
-
 function checkQuestion4(event) {
     var element1 = event.target.value;
     console.log(element1);
@@ -120,7 +117,6 @@ function checkQuestion4(event) {
         timeRemaining = timeRemaining - 10;
     } toQuestion5();
 }
-
 function checkQuestion5(event) {
     var element1 = event.target.value;
     console.log(element1);
@@ -128,9 +124,30 @@ function checkQuestion5(event) {
     } else {
         timeRemaining = timeRemaining - 10;
     }youWin = true;
+    clearInterval(timeInterval);
      toFinalScoreBox();
 }
 
+
+// Storing the scores and then getting them from local storage
+
+document.querySelector('#initials').addEventListener('click', function(){
+    var highScoreArray = [];
+    highScoreArray = JSON.parse(localStorage.getItem('score'));
+    if (highScoreArray == null) {
+        highScoreArray = [];
+    }
+    var initials = document.querySelector('#initialsbox').value;
+    var highScoreFinal = ("High Score: " + initials + " - " + score);
+    console.log(highScoreFinal)
+    highScoreArray.push(highScoreFinal);
+    console.log(highScoreArray)
+    localStorage.setItem('score', JSON.stringify(highScoreArray));
+})
+
+function postScores() {
+    
+}
 
 
 // Moving between the questions and deploying the question checks
@@ -141,48 +158,41 @@ function quizGame() {
     question1.style.display = 'block';
     questionButton.addEventListener('click', checkQuestion1);
 }
-
   function toQuestion2 () {
         var questionButton2 = document.querySelector('.questionButton2');
         question1.style.display = 'none';
         question2.style.display = 'block';
         questionButton2.addEventListener('click', checkQuestion2);
     }
-
     function toQuestion3 () {
         var questionButton3 = document.querySelector('.questionButton3');
         question2.style.display = 'none';
         question3.style.display = 'block';
         questionButton3.addEventListener('click', checkQuestion3)
     }
-
     function toQuestion4 () {
         var questionButton4 = document.querySelector('.questionButton4');
         question3.style.display = 'none';
         question4.style.display = 'block';
         questionButton4.addEventListener('click', checkQuestion4)
     }
-
     function toQuestion5 () {
         var questionButton5 = document.querySelector('.questionButton5');
         question4.style.display = 'none';
         question5.style.display = 'block';
         questionButton5.addEventListener('click', checkQuestion5)
     }
-
     function toFinalScoreBox () {
         question5.style.display = 'none';
         finalScore.style.display = 'block';
         submitInitials.addEventListener('click', toHighScore)
     }
-
     function toHighScore () {
         console.log("clicked!")
         finalScore.style.display = 'none';
         highScore.style.display = 'block';
         highScore.addEventListener('click', reloadPage)
     }
-
     function reloadPage () {
         location.reload();
     }
