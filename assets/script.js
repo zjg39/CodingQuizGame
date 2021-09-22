@@ -13,6 +13,7 @@ var question3 = document.querySelector('#question3');
 var question4 = document.querySelector('#question4');
 var question5 = document.querySelector('#question5');
 var finalScore = document.querySelector('#finalscorebox');
+var highScore = document.querySelector('#highscorebox');
 
 var startButton = document.querySelector('#startbutton');
 
@@ -28,10 +29,10 @@ var correct4 = document.querySelector('#question4correct');
 var correct5 = document.querySelector('#question5correct');
 
 
-// Win condition
+// Win condition & Time remaining
 
 var youWin = false;
-
+var timeRemaining = 0;
 
 // start the game with only the opening page displayed
 
@@ -43,8 +44,11 @@ function readyToPlay() {
     question4.style.display = 'none';   
     question5.style.display = 'none';
     finalScore.style.display = 'none';
+    highScore.style.display = 'none';
     startButton.addEventListener('click', quizGame)
 }
+
+
 
 
 // The countdown clockwork
@@ -66,40 +70,47 @@ function gameClock() {
     }, 1000);
 }
 
+var questionButton = document.querySelector('.questionButtons');
+console.log(questionButton);
 
 
 
 
-function quizGame () {
+
+
+function quizGame() {
     gameClock();
     startPage.style.display = 'none';
     question1.style.display = 'block';
-    question1.addEventListener('click', toQuestion2)
+    questionButton.addEventListener('click', toQuestion2)
 }
 
-  function toQuestion2 (event) {
+  function toQuestion2 () {
+        var questionButton2 = document.querySelector('.questionButton2');
         question1.style.display = 'none';
         question2.style.display = 'block';
-        question2.addEventListener('click', toQuestion3)
+        questionButton2.addEventListener('click', toQuestion3)
     }
 
-    function toQuestion3 (event) {
+    function toQuestion3 () {
+        var questionButton3 = document.querySelector('.questionButton3');
         question2.style.display = 'none';
         question3.style.display = 'block';
-        question3.addEventListener('click', toQuestion4)
+        questionButton3.addEventListener('click', toQuestion4)
     }
 
-    function toQuestion4 (event) {
+    function toQuestion4 () {
+        var questionButton4 = document.querySelector('.questionButton4');
         question3.style.display = 'none';
         question4.style.display = 'block';
-        question4.addEventListener('click', toQuestion5)
+        questionButton4.addEventListener('click', toQuestion5)
     }
 
-    function toQuestion5 (event) {
-        
+    function toQuestion5 () {
+        var questionButton5 = document.querySelector('.questionButton5');
         question4.style.display = 'none';
         question5.style.display = 'block';
-        question5.addEventListener('click', toFinalScoreBox)
+        questionButton5.addEventListener('click', toFinalScoreBox)
     }
 
     function toFinalScoreBox () {
@@ -108,9 +119,10 @@ function quizGame () {
         finalScore.addEventListener('click', toHighScore)
     }
 
-    function backToStart () {
+    function toHighScore () {
         finalScore.style.display = 'none';
-
+        highScore.style.display = 'block';
+        highScore.addEventListener('click', readyToPlay)
     }
 
 readyToPlay();
