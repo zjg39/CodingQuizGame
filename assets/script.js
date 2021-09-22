@@ -4,8 +4,6 @@
 // Variables to reference the more important stuff
 
 
-
-
 var startPage = document.querySelector('#main-header');
 var question1 = document.querySelector('#question1');
 var question2 = document.querySelector('#question2');
@@ -15,9 +13,7 @@ var question5 = document.querySelector('#question5');
 var finalScore = document.querySelector('#finalscorebox');
 var highScore = document.querySelector('#highscorebox');
 var submitInitials = document.querySelector('#initials');
-
 var startButton = document.querySelector('#startbutton');
-
 var countdown = document.querySelector('#countdown')
 
 
@@ -30,13 +26,14 @@ var correct4 = document.querySelector('#question4correct');
 var correct5 = document.querySelector('#question5correct');
 
 
-// Win condition & Time remaining
+// Win condition, lose condition, scores, & time remaining
 
 var youWin = false;
-
-var score = ''
-
+var youLose = false;
+var score = '';
+var highScoreList = [];
 var timeRemaining = 0;
+
 
 // start the game with only the opening page displayed
 
@@ -51,9 +48,6 @@ function readyToPlay() {
     highScore.style.display = 'none';
     startButton.addEventListener('click', quizGame)
 }
-
-
-
 
 // The countdown clockwork
 
@@ -84,7 +78,10 @@ var questionButton = document.querySelector('.questionButtons');
 console.log(questionButton);
 
 
+// An array with the correct answers
+
 var rightAnswers = ["var", "[1, 'Laser', 35]", "function();", "False", "Alert"];
+
 
 // Functions to check the right answers
 
@@ -136,7 +133,7 @@ function checkQuestion5(event) {
 
 
 
-
+// Moving between the questions and deploying the question checks
 
 function quizGame() {
     gameClock();
