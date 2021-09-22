@@ -1,5 +1,5 @@
 // JavaScript to animate the coding quiz game!
-debugger
+
 
 // Variables to reference the more important stuff
 
@@ -74,6 +74,20 @@ var questionButton = document.querySelector('.questionButtons');
 console.log(questionButton);
 
 
+var rightAnswers = ["var", "[1, 'Laser', 35]", "function();", "False", "Alert"];
+
+// Functions to check the right answers
+
+function checkQuestion1(event) {
+    var element1 = event.target.value;
+    console.log(element1);
+    if (element1 == rightAnswers[0]) {
+    } else {
+        timeRemaining = timeRemaining - 10;
+    }
+}
+
+
 
 
 
@@ -82,14 +96,14 @@ function quizGame() {
     gameClock();
     startPage.style.display = 'none';
     question1.style.display = 'block';
-    questionButton.addEventListener('click', toQuestion2)
+    questionButton.addEventListener('click', checkQuestion1);
 }
 
   function toQuestion2 () {
         var questionButton2 = document.querySelector('.questionButton2');
         question1.style.display = 'none';
         question2.style.display = 'block';
-        questionButton2.addEventListener('click', toQuestion3)
+        questionButton2.addEventListener('click', toQuestion3);
     }
 
     function toQuestion3 () {
