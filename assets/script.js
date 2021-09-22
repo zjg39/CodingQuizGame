@@ -46,15 +46,17 @@ function readyToPlay() {
     question5.style.display = 'none';
     finalScore.style.display = 'none';
     highScore.style.display = 'none';
-    startButton.addEventListener('click', quizGame)
 }
+
+startButton.addEventListener('click', quizGame)
 
 // The countdown clockwork
 
+var timeInterval;
 var timeRemaining = 75;
 
 function gameClock() {
-    var timeInterval = setInterval(function() {
+    timeInterval = setInterval(function() {
         if (timeRemaining > 1) {
             countdown.textContent = timeRemaining + ' seconds left';
             timeRemaining--;
@@ -132,22 +134,44 @@ function checkQuestion5(event) {
 // Storing the scores and then getting them from local storage
 
 document.querySelector('#initials').addEventListener('click', function(){
+    debugger
     var highScoreArray = [];
     highScoreArray = JSON.parse(localStorage.getItem('score'));
     if (highScoreArray == null) {
         highScoreArray = [];
     }
     var initials = document.querySelector('#initialsbox').value;
-    var highScoreFinal = ("High Score: " + initials + " - " + score);
+    var highScoreFinal = ("High Score: " + initials + " - " + timeRemaining);
     console.log(highScoreFinal)
     highScoreArray.push(highScoreFinal);
     console.log(highScoreArray)
     localStorage.setItem('score', JSON.stringify(highScoreArray));
 })
 
-function postScores() {
-    
+
+// Putting up the scores on the board
+
+
+function init() {
+    var scoreBoard = JSON.parse(localStorage.getItem('score'));
+    debugger
+    if (scoreBoard) {
+        for (var i = 0; i < scoreBoard.length; i++) {
+            var ol = document.getElementById("scoreList");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(scoreBoard[i]));
+            ol.appendChild(li);
+        }
+    }
 }
+
+// Clearing the scores
+
+document.querySelector('#clearScores').addEventListener('click', function(event) {
+    event.preventDefault();
+    localStorage.clear('score');
+    document.getElementById('#scoreList').style.display = 'none';
+})
 
 
 // Moving between the questions and deploying the question checks
@@ -191,8 +215,9 @@ function quizGame() {
         console.log("clicked!")
         finalScore.style.display = 'none';
         highScore.style.display = 'block';
-        highScore.addEventListener('click', reloadPage)
+        init();
     }
+    highScore.addEventListener('click', reloadPage)
     function reloadPage () {
         location.reload();
     }
