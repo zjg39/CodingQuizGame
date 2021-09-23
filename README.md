@@ -1,1 +1,18 @@
 # CodingQuizGame
+
+![Alt text](/assets/images/Screen Shot 2021-09-22 at 8.48.06 PM.png?raw=true "Screenshot: Coding Quiz Game")
+
+## User Experience and Build, Personal Comments
+
+### User Experience
+    The player is presented with an introduction that includes the title of the game, the basic layout of the game, the penalty for getting a question wrong, and information regarding scores and comparing with other scores from other players.  The player can press the start button: the game, and the timer, begins.
+    The player can move through the multiple choice questions, noticing that wrong answers take 10 seconds off of their time.  When they complete the last question (there are 5 in total), the clock stops and the remaining time is recorded as the score.  They are prompted to record their initials and click 'submit', after which they will be taken to the high score board, where they can view their own score and the scores of anyone else who wants to play.  A simple game, with a straightforward objective, with an understandable point system.
+    Intruiging colors were used to give more excitement to the game, with hover effects for the multiple choice and start buttons for an extra layer of engagement.  Simple code that took maybe 10 or 15 more minutes, with a nice effect for the player.
+    
+### The Build
+     The build started with the HTML: the start screen, question screens, final score screen, and high score screen were all built, with classes and IDs that would come in handy when the script was written.  Unfortunately, I realized too late that formatting the buttons with input tags instead of button tags was unnecessary, and would have been easier as plain buttons with some text, but no matter.  All of it was just the usual HTML with a bunch of different tags and IDs.  Pretty straightfoward, and easily readable for anyone with basic knowledge of HTML.  Comments were added for ease if navigation.  All of this goes for the CSS as well: nothing fancy, just vibrant colors with comments to denote buttons, questions, and whatnot.
+     The script was orders of magnitude more complex than the rest of the build, and it will be discribed by section...
+            The most important variables came first, with query selectors used to identify the relavant parts of the HTML for questions, high scores, the player's final score, the countdown, etc.  Correct answer variables were also made to execute functions once an answer was chosen, with the wrong answers subtracting 10 seconds from the countdown.  Next, win and lose conditions were set to false, the score and high score lists were set to empty (for later storage of objects to draw from).  The first function, readyToPlay, hides all of the question and score boxes, with only the start screen visible.  The start button is given an event listener, starting the function quizGame once it is clicked.
+      The clock was built next, named gameClock, and it is fairly simple: text showing the time left, with a special text for when there is only 1 second left, and a lose condition for when time runs out.  The win condition is true when the player arrives at the final score box, and the clock is stopped, with the variable timeRemaining recorded as the score.
+      
+      Next, the right answers to the questions are stored in a variable array, rightAnswers.  Since none of the answers for any question are the same, this was pretty simple.  To check the answers, a series of functions follow, with each one comparing a variable against an index of the rightAnswers array to see if the answer from the player matches that index.  If it doesn't, timeRemaining is lowered by 10.  This process is repeated for each question.
