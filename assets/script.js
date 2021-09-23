@@ -134,7 +134,6 @@ function checkQuestion5(event) {
 // Storing the scores and then getting them from local storage
 
 document.querySelector('#initials').addEventListener('click', function(){
-    debugger
     var highScoreArray = [];
     highScoreArray = JSON.parse(localStorage.getItem('score'));
     if (highScoreArray == null) {
@@ -154,7 +153,6 @@ document.querySelector('#initials').addEventListener('click', function(){
 
 function init() {
     var scoreBoard = JSON.parse(localStorage.getItem('score'));
-    debugger
     if (scoreBoard) {
         for (var i = 0; i < scoreBoard.length; i++) {
             var ol = document.getElementById("scoreList");

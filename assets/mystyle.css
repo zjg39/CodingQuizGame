@@ -63,7 +63,8 @@ header p {
 
 .question-container {
     margin: auto;
-    margin-top: 200px;
+    margin-top: 50px;
+    margin-bottom: 200px;
     padding: 20px 30px;
     border: 2px solid black;
     width: 700px;
@@ -289,3 +290,39 @@ header p {
     color: white;
     transition-duration: .25s;
 }
+
+/* High Score Screen / Play Again / Clear Scores */
+
+#playagainbutton {
+    width: 200px;
+    padding: 10px 0px;
+    margin: 0px 10px;
+    font-size: 30px;
+    background-color: aquamarine;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#clearScores {
+    width: 200px;
+    padding: 10px 0px;
+    margin: 0px 10px;
+    font-size: 30px;
+    background-color: aquamarine;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#scoreList {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    list-style-type: none;
+    text-align: center;
+}
+
+#initials {
+        width: 200px;
+        padding: 10px 0px;
+        margin: 0px 10px;
+        font-size: 30px;
+        background-color: aquamarine;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
